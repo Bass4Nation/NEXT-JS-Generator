@@ -1,3 +1,13 @@
+# Where to find files recived from the generate button.
+### All text recived is used as a database in this project.
+
+- Database file: api/data/database.json
+- Helpers: using Json as API
+
+
+
+
+# -------------------------------------------------
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
