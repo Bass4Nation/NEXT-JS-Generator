@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+//Importing Json here
 import Data from "./api/data/database.json"
 
 
 export default function Home() {
+  //Adding Json to var
   var title = Data[0].title;
   var arrString = Data[0].content;
-  console.log(Data[0])
+  //--------------------------------------------
   return (
     <div className={styles.container}>
       <Head>
@@ -22,10 +24,12 @@ export default function Home() {
         </h1>
 
 
-
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
+        </p>
+                <p className={styles.description}>
+          Recommended to use <a href='https://www.netlify.com'>Netlify</a> to host this webpage
         </p>
 
         <div className={styles.grid}>
