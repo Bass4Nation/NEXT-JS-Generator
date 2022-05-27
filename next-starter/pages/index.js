@@ -1,20 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
-export const getStaticProps =  async () => {
-
-  const res = await  fetch('/api/data/database.json');
-  const data = await res.json();
-
-  return{
-    props: { alldata: data}
-  }
-
-}
+import Data from "./api/data/database.json"
 
 
-export default function Home( { alldata}) {
+export default function Home() {
+  var title = Data[0].title;
+  var arrString = Data[0].content;
+  console.log(Data[0])
   return (
     <div className={styles.container}>
       <Head>
@@ -25,14 +18,10 @@ export default function Home( { alldata}) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js! -test</a>
+          {title}
         </h1>
 
-        {
-          alldata.map(data => (
-              <p></p>
-          ))
-        }
+
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -40,33 +29,11 @@ export default function Home( { alldata}) {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {arrString.map(key => 
+                    <a href="https://nextjs.org/docs" className={styles.card}>
+                    <p>{key.text}</p>
+                  </a>
+        )}
         </div>
       </main>
 
