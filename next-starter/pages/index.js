@@ -36,9 +36,9 @@ export default function Home() {
 
                 <div className={styles.grid}>
                     {arrString.map(key =>
-                        <Link href={"/page/"+key.id} className={styles.card}>
-                            <a>{key.text}</a>
-                        </Link>
+                        <a href={"/page/"+key.id} className={styles.card}>
+                            <p>{key.text}</p>
+                        </a>
                     )}
                 </div>
             </main>
