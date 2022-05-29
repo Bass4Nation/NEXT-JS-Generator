@@ -1,39 +1,40 @@
 import { useRouter } from 'next/router'
-import Data from "../api/data/database.json"
+import Link from 'next/link'
 
-const pid = () => {
+import singleStyles from '../../styles/SinglePage.module.css'
+import styles from '../../styles/Home.module.css'
+
+
+
+const DynamicPage = () => {
     const router = useRouter()
-    const { linkId } = router.query
-
-    const findArr = (arr) => {
-        let returnArr;
-        for (const arrKey in arr) {
-            if(arrKey.id === linkId){
-                returnArr = arrKey
-            }
-        }
-
-        return returnArr;
-    }
-
-
-    const arrString = findArr(Data[0].content);
+    const  pid   = router.query
+    const title = pid.text;
+    const data = pid.data;
+    const id = pid.id;
+    console.log(id);
 
 
 
 
     return (
         <>
-            <main>
-                <section>
-                    <h1>{arrString.title}</h1>
-                    <p> eodgnfosdnf</p>
+        <header>
+            <title>{title}</title>
+        </header>
+            <main className={styles.main}>
+                <section className={singleStyles.sectionMid}>
+                    <section className={singleStyles.returnFrontpage}>
+                        <Link href="/" passHref><h1>To the frontpage</h1></Link>
+                    </section>
+                    <h1>{title}</h1>
+                    <p>Id : {id}</p>
+                    <p>{data}</p>
                 </section>
 
             </main>
-
         </>
     )
 }
 
-export default pid
+export default DynamicPage

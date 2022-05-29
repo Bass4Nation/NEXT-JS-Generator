@@ -1,0 +1,10 @@
+.sectionMid{
+    text-align: center;
+    padding: 5em;
+}
+.returnFrontpage {}
+
+
+.returnFrontpage:hover {
+    color: gray;
+}

@@ -35,7 +35,9 @@ export default function Home() {
 
                 <div className={styles.grid}>
                     {arrString.map(key =>
-                        <Link href={"/page/"+key.id}>
+                        <Link href={{
+                        pathname:"/page/" + key.id,
+                        query: key}} passHref>
                             <p className={styles.card}>{key.text}</p>
                         </Link>
                     )}
