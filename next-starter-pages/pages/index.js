@@ -25,7 +25,6 @@ export default function Home() {
                     {title}
                 </h1>
 
-
                 <p className={styles.description}>
                     Get started by editing{' '}
                     <code className={styles.code}>pages/index.js</code>
@@ -36,8 +35,8 @@ export default function Home() {
 
                 <div className={styles.grid}>
                     {arrString.map(key =>
-                        <Link href={"/page/"+key.id} className={styles.card}>
-                            <a>{key.text}</a>
+                        <Link href={"/page/"+key.id}>
+                            <p className={styles.card}>{key.text}</p>
                         </Link>
                     )}
                 </div>
