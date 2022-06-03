@@ -7,6 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <React.Fragment>
+        {/* TopNav from components folder is used here to always stay on the top
+        of the page.  */}
         <TopNav />
         <Component {...pageProps} />
       </React.Fragment>
