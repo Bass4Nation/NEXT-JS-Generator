@@ -7,16 +7,16 @@ import styles from '../../styles/Home.module.css'
 
 
 const DynamicPage = () => {
+    // This is a dynamic page. Every url that is after /page/[here] will start this file.
     const router = useRouter()
+    // Getting url data.
     const  pid   = router.query
+    // Converting url data to title, string data and a ID.
     const title = pid.text;
     const data = pid.data;
     const id = pid.id;
-    console.log(id);
 
-
-
-
+// Below it is the HTML where title, data and id is used. Change them out with a string below or above 
     return (
         <>
         <header>
